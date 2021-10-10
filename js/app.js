@@ -8,7 +8,7 @@
    [1, 4, 7], // middle column
    [2, 5, 8], // right column
    [0, 4, 8], // first diagonal
-   [2, 4, 6], // secombo diagonal
+   [2, 4, 6], // second diagonal
 
   ]
 
@@ -67,7 +67,6 @@ function updateWin(winner) {
     gameStatus.innerText = 'O wins!'
   }
 }
-
 
 function handleClick(event) {
   let i = parseInt(event.target.id[2]) // what is the id of the clicked box // I now know that parseInt needs a number only in order to work, that took forever 
