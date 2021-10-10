@@ -53,23 +53,31 @@ function render() {
     // if (winner === 1 || winner === -1) { //stop game after winner is declared
     //   return
     // }
-    if (winner !== null) {
-      updateWin(winner)
-      return
+    
+  
     }
-  }
+    if (winner !== null) {
+			updateWin(winner)
+			return
+		}
 }
 
 function updateWin(winner) {
   if (winner === 1) {
     gameStatus.innerText = "X wins!"
   } else if (winner === -1) {
-    gameStatus.innerText = 'O wins!'
+    gameStatus.innerText = "O wins!"
+  } else if (winner === 'T') {
+    gameStatus.innerText = "It's a Draw!"
   }
+  return
 }
 
 function handleClick(event) {
   let i = parseInt(event.target.id[2]) // what is the id of the clicked box // I now know that parseInt needs a number only in order to work, that took forever 
+  if (winner !== null) {
+		return
+	}
   if (board[i] !== null) {
   return
   
@@ -77,8 +85,8 @@ function handleClick(event) {
 board[i] = currentPlayer
 currentPlayer = currentPlayer * -1
 
-render() // render function does not need innerText of boxes, just update board & call render
 getWinner()
+render() // render function does not need innerText of boxes, just update board & call render
 }
 
 function getWinner() {
@@ -89,10 +97,14 @@ function getWinner() {
 			if (Math.abs(counter) === 3) {
 				winner = counter / 3
 				return winner
-			} else {
+			} else if (winner === null && !board.includes(null)){
+        winner = 'T'
+      } else {
 				winner === null
 				return winner
 			}
 		})
 	})
 }
+
+// replay button just needs to call the init function and then render
