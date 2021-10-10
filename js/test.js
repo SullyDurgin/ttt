@@ -16,8 +16,14 @@ let winner = false // a tie has occurred
 
 // 2) Store cached element references on the page that will be accessed in code more than once in variables to make code more concise, readable, and performant:
 
+
 // 2.1) Store the 9 elements that represent the squares on the page.
 // You may want to give each square a class name in your HTML to make this easier!
+
+sq0, sq1, sq2, sq3, sq4, sq5, sq6, sq7, sq8
+
+boxIndex = box.id[2] // this is just the number on the end of box
+
 
 // 2.2) Store the element that displays the game status on the page.
 
@@ -26,15 +32,26 @@ let winner = false // a tie has occurred
 //load board
 //current player is X
 
+function startGame() {
+	document.currentPlayer = 'X' 
+}
+
+
 // 3.1) Call an initialize function
 
 // 3.2) That initialize function should initialize the state variables:
 // 3.2.1) Initialize the board array to 9 nulls to represent empty squares.
+let board = [null, null, null, null, null, null, null, null, null]
 // The 9 elements will "map" to each square.
+
+let boardMap = board.map(function gamePlay())
+
 // Index 0 represents the top-left square.
 // Index 1 represents the top-middle square.
 // So on, continuing through the entire board until...
 // Index 8 maps to the bottom-right square.
+
+
 // 3.2.2) Initialize whose turn it is to 1 (player 'X').
 // Player 'O' will be represented by -1.
 // 3.2.3) Initialize the winner variable to null.
@@ -47,7 +64,7 @@ let winner = false // a tie has occurred
 // 3.3.1) Loop over the board array (which represents the squares on the page), and for each iteration:
 // 3.3.1.1) Use the index of the iteration to access the square in the squares array that corresponds with the current cell being iterated over in the board array
 // 3.3.1.2) Style that square however you wish dependant on the value contained in the current cell being iterated over (-1, 1, or null)
-// 3.3.2) Render a message reflecting the currrent game state:
+// 3.3.2) Render a message reflecting the current game state:
 // 3.3.2.1) If winner has a value other than null (game still in progress), render whose turn it is.
 // Hint: Maybe use a ternary inside of a template literal here?
 // 3.3.2.2) If winner is equal to 'T' (tie), render a tie message.
