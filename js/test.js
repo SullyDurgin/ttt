@@ -1,3 +1,5 @@
+
+
 // 1) Define the required variables used to track the state of the game:
 // None of these variables will need to hold a value when they are defined
 
