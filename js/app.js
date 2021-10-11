@@ -22,6 +22,7 @@ let board, currentPlayer, winner
 const gameBoard = document.querySelector('.board')
 const boxes = document.querySelectorAll('.box')
 const gameStatus = document.querySelector('#message')
+const replayButton = document.querySelector('button')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -29,6 +30,8 @@ const gameStatus = document.querySelector('#message')
 boxes.forEach((box) => {
   box.addEventListener('click', handleClick)
 })
+
+replayButton.addEventListener('click', init)// replay button just needs to call the init function and then render
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -38,6 +41,7 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null] // no player is yet on the board
   currentPlayer = 1
   winner = null
+  gameStatus.innerText = ''
   render()
 }
 
@@ -60,6 +64,8 @@ function render() {
 			updateWin(winner)
 			return
 		}
+
+    // restartGame()
 }
 
 function updateWin(winner) {
@@ -75,13 +81,9 @@ function updateWin(winner) {
 
 function handleClick(event) {
   let i = parseInt(event.target.id[2]) // what is the id of the clicked box // I now know that parseInt needs a number only in order to work, that took forever 
-  if (winner !== null) {
+  if (board[i] !== null || winner !== null) {
 		return
 	}
-  if (board[i] !== null) {
-  return
-  
-  }
 board[i] = currentPlayer
 currentPlayer = currentPlayer * -1
 
@@ -96,15 +98,9 @@ function getWinner() {
 			counter += board[num]
 			if (Math.abs(counter) === 3) {
 				winner = counter / 3
-				return winner
 			} else if (winner === null && !board.includes(null)){
         winner = 'T'
-      } else {
-				winner === null
-				return winner
 			}
 		})
 	})
 }
-
-// replay button just needs to call the init function and then render
