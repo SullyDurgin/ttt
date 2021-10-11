@@ -46,6 +46,11 @@ function init() {
 }
 
 function render() {
+  if (currentPlayer === 1) {
+    gameStatus.innerText = 'Choose a box player X '
+  } else if (currentPlayer === -1) {
+    gameStatus.innerText = 'Your turn player O '
+  }
   for (i = 0; i < board.length; i++) {
     if (board[i] === 1) {
       boxes[i].innerText = 'X'
@@ -53,12 +58,7 @@ function render() {
       boxes[i].innerText = 'O'
     } else {
       boxes[i].innerText = ''
-    }
-    // if (winner === 1 || winner === -1) { //stop game after winner is declared
-    //   return
-    // }
-    
-  
+     }
     }
     if (winner !== null) {
 			updateWin(winner)
