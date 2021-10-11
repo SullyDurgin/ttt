@@ -64,8 +64,6 @@ function render() {
 			updateWin(winner)
 			return
 		}
-
-    // restartGame()
 }
 
 function updateWin(winner) {

@@ -47,7 +47,7 @@ section.board {
   margin: 15px;
   grid-auto-rows: minmax(100px, auto);
   grid-auto-columns: minmax(100px, auto);
-  
+  cursor: url(https://ani.cursors-4u.net/others/oth-9/oth842.cur), auto !important;
 }
 
 
