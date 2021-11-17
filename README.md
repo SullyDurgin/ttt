@@ -1,6 +1,6 @@
 # Tic-Tac-Toe (Project-1)
 
-This application is a Tic-Tac-Toe, SPA (single-page application) that is written in HTML, CSS & JavaScript. This application allows the user to create a log in and play a game of tic-tac-toe. I wanted to complete this project in order to prove to myself that I am capable of doing something like this. It is hard to see how much you have learned until you put your skills and knowledge to the test. I am proud of what I have made even if it is a little messy and disorganized. It works!
+This application is a Tic-Tac-Toe, SPA (single-page application) that is written in HTML, CSS & JavaScript. This application allows the user to play a game of tic-tac-toe. I wanted to complete this project in order to prove to myself that I am capable of doing something like this. It is hard to see how much you have learned until you put your skills and knowledge to the test. I am proud of what I have made even if it is a little messy and disorganized. It works!
 
 ## Link 
 
